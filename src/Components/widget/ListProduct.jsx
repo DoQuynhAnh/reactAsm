@@ -102,7 +102,7 @@ const ListProduct = (props) => {
           </button>
                     show {paginate} of {totalPage}
           <button className="btn" id="decrement" onClick={increment}>
-            <i className="fas fa-arrow-right"></i>
+            <i className="fas fa-arrow-right test"></i>
           </button>
         </div>
       </div>
