@@ -2,8 +2,12 @@
 import React from 'react'
 import { Link } from 'react-router-dom';
 import { Col } from 'reactstrap';
+import CardApi from '../api/CardApi';
 
 const CategoryTrend = (props) => {
+	const handleAddToCard = (body) => {
+		CardApi.addToCard(body)
+	}
 
 	const { image, name, price, id } = props
 	return (
@@ -26,7 +30,10 @@ const CategoryTrend = (props) => {
 							<span className="cur-p">{price}đ</span>
 						</div>
 						<div className="item-btn-a">
-							<Link to="#">
+							<Link
+								to="#"
+								title="thêm vào giở hàng"
+								onClick={() => handleAddToCard({ ...props, count: 1 })}>
 								<i className="fas fa-shopping-cart "></i>
 							</Link>
 						</div>

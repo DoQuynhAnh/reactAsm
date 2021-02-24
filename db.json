@@ -10,9 +10,19 @@
       "quantity": 36
     },
     {
-      "id": "3",
+      "id": "909333",
       "category": "1",
-      "name": "Tasty Concrete Rice",
+      "name": "Tasty Concrete Rice 1",
+      "image": "https://picsum.photos/640/480",
+      "price": "513.00",
+      "status": false,
+      "description": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Iste atque ea quis molestias",
+      "quantity": 36
+    },
+    {
+      "id": "9093334",
+      "category": "1",
+      "name": "Tasty Concrete Rice 2",
       "image": "https://picsum.photos/640/480",
       "price": "513.00",
       "status": false,
@@ -58,16 +68,6 @@
       "status": true,
       "description": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Iste atque ea quis molestias",
       "quantity": 86
-    },
-    {
-      "id": "12",
-      "category": "1",
-      "name": "Licensed Steel Soap",
-      "image": "https://picsum.photos/640/480",
-      "price": "611.00",
-      "status": false,
-      "description": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Iste atque ea quis molestias",
-      "quantity": 14
     },
     {
       "id": "14",
@@ -128,6 +128,53 @@
     {
       "id": "2",
       "name": "danh mục nổi bật"
+    }
+  ],
+  "users": [
+    {
+      "id": "123456789",
+      "firstName": "Anh",
+      "lastName": "Do",
+      "fullName": "Do Quynh Anh",
+      "username": "Anhdqph10540",
+      "password": "",
+      "dateCreate": "",
+      "avatar": ""
+    }
+  ],
+  "cards": [
+    {
+      "id": "909333",
+      "category": "1",
+      "name": "Tasty Concrete Rice 1",
+      "image": "https://picsum.photos/640/480",
+      "price": "513.00",
+      "status": false,
+      "description": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Iste atque ea quis molestias",
+      "quantity": 36,
+      "count": 1
+    },
+    {
+      "id": "11",
+      "category": "1",
+      "name": "Handcrafted Soft Salad",
+      "image": "https://picsum.photos/640/480",
+      "price": "824.00",
+      "status": true,
+      "description": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Iste atque ea quis molestias",
+      "quantity": 86,
+      "count": 1
+    },
+    {
+      "id": "9093334",
+      "category": "1",
+      "name": "Tasty Concrete Rice 2",
+      "image": "https://picsum.photos/640/480",
+      "price": "513.00",
+      "status": false,
+      "description": "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Iste atque ea quis molestias",
+      "quantity": 36,
+      "count": 1
     }
   ]
 }

@@ -16,9 +16,6 @@ const Footer = () => {
                   <a href="#">Game bản quyền là gì?</a>
                 </li>
                 <li>
-                  <a href="#">Giới thiệu Divine Shop</a>
-                </li>
-                <li>
                   <a href="#">Điều khoản dịch vụ</a>
                 </li>
                 <li>
@@ -56,10 +53,9 @@ const Footer = () => {
                   <a href="#">Địa chỉ giao dịch trực tiếp</a>
                 </li>
                 <li>
-                  Hotline: <a href="#">1900 633 305</a> -{" "}
-                  <a href="#">096 4567 247</a> (8:00 - 24:00)
+                  Hotline: <a href="tel: 0832582556">0832582556</a> -{" "}(8:00 - 24:00)
               </li>
-                <li>Email: hotro@divineshop.vn</li>
+                <li>Email: anhdqph10540@fpt.edu.vn</li>
                 <li>
                   <a href="#">Fanpage</a>
                 </li>

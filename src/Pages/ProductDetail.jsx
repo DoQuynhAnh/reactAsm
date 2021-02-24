@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom'
 import { Breadcrumb, BreadcrumbItem, Col, Container, Form, Row } from 'reactstrap'
 import ProductApi from '../api/ProductApi'
 import Banner from '../Components/Banner'
-import { layoutAction } from '../redux/Layout.slice'
+import { layoutAction } from '../redux/reducer/Layout.slice'
 
 const ProductDetail = memo((props) => {
   const [state, setstate] = useState([])

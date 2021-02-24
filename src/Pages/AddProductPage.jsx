@@ -13,7 +13,7 @@ const AddProductPage = () => {
 	const handleSubmit = (e) => {
 		try {
 			// debugger
-			ProductApi.add({ ...inputs, id: uuid(), image: profileImg ,status: platformValue});
+			ProductApi.add({ ...inputs, id: uuid(), image: profileImg, status: platformValue });
 			window.alert("success !!")
 		} catch (error) {
 			window.alert(error)
@@ -30,7 +30,7 @@ const AddProductPage = () => {
 		}
 		reader.readAsDataURL(e.target.files[0]);
 	}
-	
+
 	return (
 		<>
 			<Container>
@@ -110,8 +110,8 @@ const AddProductPage = () => {
 						<input value={false}
 							type="radio"
 							name="status"
-						checked={platformValue === false}
-						onChange={() => plaftormInputProps(false)} 
+							checked={platformValue === false}
+							onChange={() => plaftormInputProps(false)}
 						/>
 					</FormGroup>
 					<FormGroup>

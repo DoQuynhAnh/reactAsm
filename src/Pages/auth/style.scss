@@ -198,18 +198,6 @@ $primary: #4267b2;
     position: relative;
     cursor: pointer;
     font-weight: 700;
-    &:after {
-      content: "";
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      width: 20px;
-      border-bottom: 1px solid #337ab7;
-      transition: all ease-in 0.25s;
-    }
-    &:hover:after {
-      width: 100%;
-    }
   }
 }
 

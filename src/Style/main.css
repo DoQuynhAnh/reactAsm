@@ -414,8 +414,8 @@ body .container {
 /* end header */
 
 /**
-   main page
-    */
+  main page
+*/
 
 /* banner */
 
@@ -432,7 +432,6 @@ body .container {
   margin-right: auto;
 }
 .banner-home .menu-2 {
-  background-color: #f7f7f7;
   color: #000;
   display: flex;
   flex: 1 100%;
@@ -460,6 +459,7 @@ body .container {
   padding: 5px 10px;
   border-radius: 4px;
   border: thin solid #4267b2;
+  cursor: pointer;
 }
 .banner-home .menu-2 .header-menu .bar-btn span {
   margin-left: 5px;
@@ -469,6 +469,7 @@ body .container {
   height: 100%;
   display: flex;
   margin: 10px 0 0 0;
+  cursor: pointer;
 }
 .banner-home .menu-2 .header-menu div.nav-menu ul {
   list-style: none;
@@ -519,6 +520,19 @@ body .container {
 
 .banner-home .menu-2 div.right-menu .quick-menu span {
   margin-left: 5px;
+}
+
+.menu-catalog .header-menu .hover-menu ul {
+  background-color: #f7f7f7 !important;
+  visibility: hidden;
+  width: 172px !important;
+  height: 225px !important;
+  position: absolute;
+  z-index: 9;
+}
+
+.menu-catalog .header-menu:hover .hover-menu ul {
+  visibility: unset;
 }
 
 /* content */
@@ -1180,6 +1194,62 @@ footer ul li a {
 
 .dropdown-menu {
   border: 0 !important;
+}
+
+/* page card */
+
+div .container h2 {
+  font-size: 20px;
+  font-weight: bold;
+  margin: 0px;
+  display: inline-block;
+}
+
+.container .count-san-pham {
+  margin-left: 5px;
+  font-size: 14px;
+}
+
+.container > .container-card {
+  padding: 35px 40px;
+  margin-bottom: 20px;
+  border: 1px solid #eee;
+  border-radius: 4px;
+}
+
+.card-detail .item {
+  border: 1px solid #ddd;
+  padding-top: 15px;
+  padding-bottom: 15px;
+}
+
+.card-detail img {
+  width: 100%;
+  height: 88px;
+}
+
+.card-detail .title {
+  font-weight: bold;
+}
+
+.card-detail .item-status,
+.cart-detail .price {
+  padding: 3px 0;
+}
+
+.card-detail .item-status .con-hang {
+  color: green;
+}
+
+.text-right .price {
+  font-size: 16px;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+.form-control:disabled,
+.form-control[readonly] {
+  background-color: #fdfdfd !important;
 }
 @media screen and (max-width: 520px) {
   .screen-body {

@@ -1,14 +1,18 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 // eslint-disable-next-line 
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useReducer, useState } from 'react'
 import { Link } from 'react-router-dom'
+import { Alert } from 'reactstrap'
 import ProductApi from '../../api/ProductApi'
+
 
 
 const ListProduct = (props) => {
   const [state, setState] = useState([])
   const [totalPage, setTotalPage] = useState(0)
   const [paginate, setPaginate] = useState(1)
+  const [showAlert, setShowAlert] = useState(false)
+  const [ignored, forceUpdate] = useReducer(x => x + 1, 0);
 
   const increment = () => {
     (paginate < totalPage) ? setPaginate(paginate + 1) : setPaginate(paginate)
@@ -17,11 +21,15 @@ const ListProduct = (props) => {
     (paginate > 1) ? (setPaginate(paginate - 1)) : setPaginate(1)
   }
 
-  const handleDeleteItem = (id) => {
+
+  const handleDeleteItem = async (id) => {
     let ask = window.confirm("are you sure to delete this item!!");
     if (ask) {
       ProductApi.delete(id);
-      window.alert("delete success !!")
+      const { data: product } = await ProductApi.paginate(paginate, 6)
+      getListProduct(product)
+      setShowAlert(true)
+      forceUpdate()
     }
   }
 
@@ -32,13 +40,23 @@ const ListProduct = (props) => {
     setState(product)
   }
 
-
   useEffect(() => {
     getListProduct(paginate)
-  }, [paginate, state.length])
+    // console.log(ignored);
+  }, [ignored, paginate, totalPage])
 
   return (
     <div>
+      {showAlert && <Alert color="success">
+        <div className="row w-100 mx-0">
+          delete item success!
+          <i
+            className="far fa-times-circle ml-auto"
+            onClick={() => setShowAlert(false)}
+            style={{ cursor: 'pointer' }}
+          ></i>
+        </div>
+      </Alert>}
       <table className="table table-striped table-sm">
         <thead>
           <tr>
@@ -67,7 +85,9 @@ const ListProduct = (props) => {
                 <Link to={`/sua-sp/${product.id}`} className="btn btn-primary text-white mr-2">
                   Sửa
                 </Link>
-                <button className="btn btn-danger" onClick={() => handleDeleteItem(product.id)}>
+                <button
+                  className="btn btn-danger"
+                  onClick={() => handleDeleteItem(product.id)}>
                   Delete
                 </button>
               </td>

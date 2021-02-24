@@ -1,10 +1,22 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 import { Container, Row } from 'reactstrap'
+import CardApi from '../api/CardApi'
 
 
 const Header = () => {
+	const [lengths, setLength] = useState(0)
+
+	const getAllItemCard = async () => {
+		const { data: item } = await CardApi.getAll()
+		setLength(item.length)
+	}
+
+	useEffect(() => {
+		getAllItemCard()
+	}, [])
+
 	return (
 		<>
 			<div>
@@ -48,7 +60,7 @@ const Header = () => {
 								<li data-toggle="collapse" data-target="#danh-muc" className="collapsed">
 									<a href="#"><i className="fa fa-bars icon-font18"></i>Danh mục sản phẩm <i className="fa fa-angle-down"></i></a>
 								</li>
-								<ul className="sub-menu collapse" id="danh-muc">
+								{/* <ul className="sub-menu collapse" id="danh-muc">
 									<li>
 										<a href="#">
 											<i className="fab fa-steam-symbol"></i>
@@ -131,7 +143,7 @@ const Header = () => {
 								<li style={{ margin: 0 }}>
 									<a href="#" style={{ fontSize: "17px" }} ><i
 										className="fab fa-facebook-messenger"></i>Nhắn tin cho Shop </a>
-								</li>
+								</li> */}
 							</ul>
 						</div>
 					</nav>
@@ -160,7 +172,7 @@ const Header = () => {
 						<div className="cart-mobile">
 							<div className="align-items-center d-flex">
 								<a href="#"><i className="fas fa-shopping-cart cart-size-mobile"></i> <span
-									className="quantity_mobile">0</span></a>
+									className="quantity_mobile">{lengths}</span></a>
 							</div>
 						</div>
 						<div className="header-btn">
@@ -169,10 +181,15 @@ const Header = () => {
 
 									<div className="ml-5">
 										<div className="border-white">
-											<div className="align-items-center d-flex" id="update-cart">
-												<i className="fas fa-shopping-cart cart-size text-white"></i><b className="cart-text">Giỏ
-                                        hàng</b><span className="quantity">0</span>
-											</div>
+											<Link to="/card">
+												<div className="align-items-center d-flex" id="update-cart">
+													<i className="fas fa-shopping-cart cart-size text-white"></i>
+													<b className="cart-text">
+														Giỏ hàng
+												</b>
+													<span className="quantity">{lengths}</span>
+												</div>
+											</Link>
 										</div>
 									</div>
 

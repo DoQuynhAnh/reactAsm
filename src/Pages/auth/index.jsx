@@ -2,11 +2,11 @@ import React from 'react'
 import './style.scss'
 const Index = () => {
 	const listStyle = {
-		showSignup : "translateZ(-100px) rotateY( -90deg)",
-		showLogin : "translateZ(-100px)",
-		showForgotPassword : "translateZ(-100px) rotateY(-180deg)",
-		showSubscribe : "translateZ(-100px) rotateX(-90deg)",
-		showThankYou : "translateZ(-100px) rotateX(90deg)",
+		showSignup: "translateZ(-100px) rotateY( -90deg)",
+		showLogin: "translateZ(-100px)",
+		showForgotPassword: "translateZ(-100px) rotateY(-180deg)",
+		showSubscribe: "translateZ(-100px) rotateX(-90deg)",
+		showThankYou: "translateZ(-100px) rotateX(90deg)",
 	}
 	const parentRef = React.createRef();
 
@@ -17,10 +17,6 @@ const Index = () => {
 		e.preventDefault()
 		parentRef.current.style.transform = listStyle['showThankYou']
 	}
-
-	// useEffect(() => {
-	// 	handleShow()
-	// });
 
 	return (
 		<div>

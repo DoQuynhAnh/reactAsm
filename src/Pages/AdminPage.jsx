@@ -1,14 +1,16 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { Container, Nav, NavItem, Row } from 'reactstrap'
 import ListProduct from '../Components/widget/ListProduct'
-import { layoutAction } from '../redux/Layout.slice'
+import { layoutAction } from '../redux/reducer/Layout.slice'
 import Banner from '../Components/Banner'
+import ListCategory from '../Components/widget/ListCategory'
 
 const AdminPage = () => {
   const activeBanner = useSelector((state) => state.layout)
   const dispatch = useDispatch()
+  const [isProduct, setIsProduct] = useState(true)
 
   useEffect(() => {
     dispatch(layoutAction.changeLayout(false))
@@ -24,14 +26,20 @@ const AdminPage = () => {
             <div className="position-static pt-3">
               <ul className="nav flex-column">
                 <NavItem>
-                  <a className="nav-link active" aria-current="page" href="#">
-                    <span data-feather="home"></span>
+                  <a
+                    className={`nav-link py-2 ${isProduct ? 'text-primary' : 'text-dark'}`}
+                    onClick={() => setIsProduct(true)}
+                    href="#"
+                  >
                     Products
                   </a>
                 </NavItem>
                 <NavItem>
-                  <a className="nav-link" href="#">
-                    <span data-feather="file"></span>
+                  <a
+                    className={`nav-link py-2 ${!isProduct ? 'text-primary' : 'text-dark'}`}
+                    onClick={() => setIsProduct(false)}
+                    href="#"
+                  >
                     Orders
                   </a>
                 </NavItem>
@@ -49,7 +57,7 @@ const AdminPage = () => {
               </div>
             </div>
             <div className="table-responsive" id="table-render">
-              <ListProduct />
+              {isProduct ? <ListProduct /> : <ListCategory />}
             </div>
           </main>
         </Row>
